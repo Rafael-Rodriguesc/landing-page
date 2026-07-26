@@ -1,34 +1,100 @@
-# Ferrari Luxury Landing
+# ApexDrive - Premium Automotive Landing Page
 
-Landing page conceitual de carros de luxo construída com Next.js App Router, TypeScript, Tailwind CSS e Framer Motion. O projeto usa assets locais otimizados pelo `next/image` e não depende de variáveis de ambiente.
+Uma landing page premium inspirada na experiência digital das maiores marcas automotivas do mundo, desenvolvida com foco em design moderno, animações fluidas e alta performance.
 
-## Requisitos
+O projeto foi criado para demonstrar habilidades em desenvolvimento Front-End utilizando tecnologias modernas, com atenção especial à experiência do usuário (UX), interfaces responsivas e microinterações.
 
-- Node.js 20 ou superior
-- npm 10 ou superior
+---
 
-## Desenvolvimento
+## ✨ Destaques
+
+- 🎬 Hero Section com visual cinematográfico
+- 🚀 Animações suaves e responsivas
+- 🏎️ Cards interativos com efeito de profundidade (3D)
+- 🎨 Interface moderna inspirada em marcas de luxo
+- 📱 Design totalmente responsivo
+- ⚡ Alto desempenho e carregamento otimizado
+- 🎯 Código organizado e componentizado
+- 🌙 Dark Theme Premium
+
+---
+
+## 🛠️ Tecnologias
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- React
+- Framer Motion
+- GSAP
+- Lucide React
+
+---
+
+## 🎯 Objetivo
+
+O objetivo deste projeto foi desenvolver uma landing page que simulasse o lançamento de um hipercarro premium, aplicando conceitos modernos de desenvolvimento Front-End e criando uma experiência visual marcante.
+
+Durante o desenvolvimento foram trabalhados conceitos como:
+
+- Componentização
+- Responsividade
+- Animações avançadas
+- Performance
+- Organização de código
+- UI/UX
+- Microinterações
+- Design System
+
+---
+
+
+## 🚀 Como executar
+
+Clone o repositório
+
+```bash
+git clone <URL_DO_REPOSITORIO>
+```
+
+Entre na pasta
+
+```bash
+cd landing-page
+```
+
+Instale as dependências
 
 ```bash
 npm install
+```
+
+Execute o projeto
+
+```bash
 npm run dev
 ```
 
-A aplicação estará disponível em `http://localhost:3000`.
+Acesse
 
-## Verificações
-
-```bash
-npm run lint
-npm run typecheck
-npm run build
+```
+http://localhost:3000
 ```
 
-## Deploy na Vercel
 
-1. Envie o projeto para um repositório GitHub.
-2. Importe o repositório na Vercel.
-3. Mantenha o framework detectado como Next.js.
-4. Use `npm run build` como comando de build.
+## 💡 Aprendizados
 
-Nenhuma variável de ambiente ou domínio remoto de imagens é necessário. Os veículos e dados apresentados fazem parte de uma experiência visual conceitual e não representam um site oficial da Ferrari.
+Este projeto foi uma oportunidade para aprofundar conhecimentos em:
+
+- Desenvolvimento com Next.js
+- TypeScript
+- Tailwind CSS
+- Criação de interfaces premium
+- Animações com Framer Motion e GSAP
+- Componentização em React
+- Boas práticas de Front-End
+- Performance e otimização
+
+---
+
+⭐ Se este projeto chamou sua atenção, deixe uma estrela no repositório!
