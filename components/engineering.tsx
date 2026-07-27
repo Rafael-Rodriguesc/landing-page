@@ -1,40 +1,78 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
-import { CircuitBoard, Gauge, Layers3, Wind } from "lucide-react";
-
-const features = [
-  [Wind, "AERODINÂMICA ATIVA", "Superfícies móveis equilibram eficiência em reta e pressão nas curvas."],
-  [CircuitBoard, "CONTROLE INTELIGENTE", "Sensores interpretam aderência e intenção sem afastar o piloto da máquina."],
-  [Layers3, "MATERIAIS PREMIUM", "Carbono, alumínio e couro técnico reduzem massa e elevam a percepção tátil."],
-  [Gauge, "DESEMPENHO EXTREMO", "Software e mecânica trabalham juntos para preservar resposta e consistência."],
-];
+import { ArrowUpRight, Crosshair } from "lucide-react";
+import { useState } from "react";
+import { engineeringHotspots } from "@/data/ferrari-experience";
 
 export function Engineering() {
+  const [selectedId, setSelectedId] = useState(engineeringHotspots[0].id);
   const reduceMotion = useReducedMotion();
+  const selected = engineeringHotspots.find((item) => item.id === selectedId) ?? engineeringHotspots[0];
+
   return (
-    <section className="technology section" id="tecnologia" aria-labelledby="technology-title">
-      <div className="technology__image">
-        <Image src="/images/technology-cockpit.png" alt="Cockpit técnico em fibra de carbono com iluminação vermelha" fill sizes="(max-width: 900px) 100vw, 52vw" />
-        <span>INTERFACE ORIENTADA AO PILOTO</span>
-      </div>
-      <div className="technology__content">
-        <div className="section-label"><span>03</span> TECNOLOGIA</div>
-        <h2 id="technology-title">INOVAÇÃO QUE<br />AMPLIA O INSTINTO</h2>
-        <p className="technology__lead">Cada camada de tecnologia existe para tornar a informação mais clara, a resposta mais rápida e o comando mais natural.</p>
-        <div className="technology__grid">
-          {features.map(([Icon, title, copy], index) => {
-            const FeatureIcon = Icon as typeof Wind;
-            return (
-              <motion.article key={title as string} initial={reduceMotion ? false : { opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.06 }}>
-                <FeatureIcon size={21} />
-                <h3>{title as string}</h3>
-                <p>{copy as string}</p>
-              </motion.article>
-            );
-          })}
+    <section className="engineering section" id="tecnologia" aria-labelledby="engineering-title">
+      <div className="engineering__header">
+        <div>
+          <div className="section-label"><span>03</span> ARQUITETURA TÉCNICA</div>
+          <h2 id="engineering-title">ENGENHARIA<br />EM CAMADAS.</h2>
         </div>
+        <p>Selecione um ponto para revelar os materiais, a função e a textura que definem a Ferrari 12Cilindri.</p>
+      </div>
+
+      <div className="engineering__layout">
+        <div className="engineering__main">
+          <Image
+            src="/images/engineering-hotspots-main.png"
+            alt="Ferrari 12Cilindri vermelho em estúdio técnico com detalhes de engenharia destacados"
+            fill
+            quality={90}
+            sizes="(max-width: 900px) calc(100vw - 2.4rem), 66vw"
+          />
+          <div className="engineering__main-shade" />
+          <p className="engineering__instruction"><Crosshair size={14} /> SELECIONE UM PONTO TÉCNICO</p>
+          <div className="engineering__hotspots" aria-label="Detalhes técnicos da Ferrari 12Cilindri">
+            {engineeringHotspots.map((item, index) => (
+              <button
+                key={item.id}
+                type="button"
+                className={`engineering__hotspot ${selectedId === item.id ? "engineering__hotspot--active" : ""}`}
+                style={item.position}
+                aria-label={`Ver detalhe: ${item.label}`}
+                aria-controls="engineering-detail"
+                aria-pressed={selectedId === item.id}
+                onClick={() => setSelectedId(item.id)}
+              >
+                <span>{String(index + 1).padStart(2, "0")}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <aside className="engineering__detail" id="engineering-detail" aria-live="polite">
+          <div className="engineering__detail-count">{selected.eyebrow}</div>
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              className="engineering__detail-image"
+              key={selected.id}
+              initial={reduceMotion ? false : { opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={reduceMotion ? undefined : { opacity: 0 }}
+              transition={{ duration: reduceMotion ? 0 : 0.28 }}
+            >
+              <Image src={selected.image} alt={`Detalhe técnico: ${selected.label}`} fill quality={88} sizes="(max-width: 900px) calc(100vw - 2.4rem), 34vw" />
+            </motion.div>
+          </AnimatePresence>
+          <h3>{selected.title}</h3>
+          <p>{selected.copy}</p>
+          <button type="button" className="engineering__next" onClick={() => {
+            const current = engineeringHotspots.findIndex((item) => item.id === selected.id);
+            setSelectedId(engineeringHotspots[(current + 1) % engineeringHotspots.length].id);
+          }}>
+            PRÓXIMO DETALHE <ArrowUpRight size={16} />
+          </button>
+        </aside>
       </div>
     </section>
   );

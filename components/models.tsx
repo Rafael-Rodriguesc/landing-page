@@ -66,7 +66,7 @@ export function Models() {
   const [active, setActive] = useState(1);
   return (
     <section className="models section" id="modelos" aria-labelledby="models-title">
-      <div className="section-label"><span>01</span> GAMA ATUAL</div>
+      <div className="section-label"><span>01</span> SELEÇÃO FERRARI</div>
       <div className="models__heading">
         <h2 id="models-title">NOSSOS<br />MODELOS</h2>
         <p>Seis arquiteturas. Uma mesma obsessão por resposta, equilíbrio e emoção ao volante.</p>
