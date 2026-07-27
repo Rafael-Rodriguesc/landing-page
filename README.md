@@ -1,4 +1,4 @@
-# ApexDrive - Premium Automotive Landing Page
+# Luxury Car Automotive Landing Page
 
 Uma landing page premium inspirada na experiência digital das maiores marcas automotivas do mundo, desenvolvida com foco em design moderno, animações fluidas e alta performance.
 
