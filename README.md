@@ -94,7 +94,3 @@ Este projeto foi uma oportunidade para aprofundar conhecimentos em:
 - Componentização em React
 - Boas práticas de Front-End
 - Performance e otimização
-
----
-
-⭐ Se este projeto chamou sua atenção, deixe uma estrela no repositório!
