@@ -19,6 +19,11 @@ O projeto foi criado para demonstrar habilidades em desenvolvimento Front-End ut
 
 ---
 
+## 🚀 Demonstração
+
+🔗 **Acesse a landing page:**  
+https://luxury-car-landing-jnbrcmc68-rafadev1.vercel.app/
+---
 ## 🛠️ Tecnologias
 
 - Next.js
