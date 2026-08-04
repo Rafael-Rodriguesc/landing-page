@@ -85,17 +85,3 @@ Acesse
 ```
 http://localhost:3000
 ```
-
-
-## 💡 Aprendizados
-
-Este projeto foi uma oportunidade para aprofundar conhecimentos em:
-
-- Desenvolvimento com Next.js
-- TypeScript
-- Tailwind CSS
-- Criação de interfaces premium
-- Animações com Framer Motion e GSAP
-- Componentização em React
-- Boas práticas de Front-End
-- Performance e otimização
